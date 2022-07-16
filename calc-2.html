@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Posto de Gasolina - Tabela de Preços</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="icon"
+        href="https://www.shell.com.br/etc.clientlibs/settings/wcm/designs/shell-rio/clientlibs/themes/theme-shell/resources/logo/logo.svg">
+
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap');
+
+            * {
+                padding: 0;
+                margin: 0;
+                box-sizing: border-box;
+            }
+
+            .flag-price {
+                display: flex;
+                flex-direction: row;
+                gap: 3rem;
+            }
+
+            #price-combustivel {
+                color: red;
+                font-size: 1rem;
+                border: 1px solid #242424;
+                padding: 1em;
+            }
+
+            body {
+                height: 100vh;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                gap: 2rem;
+                line-height: 1.5;
+                font-family: 'Roboto', sans-serif;
+                font-size: 2rem;
+                color: #242424;
+            }
+        </style>
+</head>
+
+<body>
+    <div>
+        <img src="https://www.shell.com.br/etc.clientlibs/settings/wcm/designs/shell-rio/clientlibs/themes/theme-shell/resources/logo/logo.svg"
+            alt="">
+    </div>
+    <div class="flag-price">
+        <span id="price-combustivel">Álcool preço/litro: R$3,16</span>
+        <span id="price-combustivel">Gasolina preço/litro: R$4,19</span>
+    </div>
+    <script src="./script.js"></script>
+    <script>
+        function comprarCombustivel() {
+            var tipoCommbustivel;
+            var qtdLitros;
+
+            function selectCombustivel() {
+                tipoCommbustivel = +window.prompt("Digite 1 para Álcool e 2 para Gasolina:");
+                if (tipoCommbustivel !== 1 && tipoCommbustivel !== 2) {
+                    window.alert("Código inválido ou inexistente!");
+                    selectCombustivel();
+                }
+            }
+
+            function selectLitros() {
+                qtdLitros = +window.prompt("Informe a quantidade de litros a ser abastecido:");
+                if (qtdLitros <= 0 || Number.isNaN(qtdLitros) == true) {
+                    window.alert("O valor informado é inválido!");
+                    selectLitros();
+                }
+            }
+
+            selectCombustivel();
+            selectLitros();
+
+            if (tipoCommbustivel == 1) {
+                document.write(`Combustível selecionado: ${tipoCommbustivel} - Álcool. <br> Litros abastecidos: ${qtdLitros}L. <br> Total a pagar: R$ ${qtdLitros * 3.16}`);
+            } else {
+                document.write(`Combustível selecionado: ${tipoCommbustivel} - Gasolina. <br> Litros abastecidos: ${qtdLitros}L. <br> Total a pagar: R$ ${qtdLitros * 4.19}`);
+            }
+
+        }
+
+        comprarCombustivel();
+    </script>
+
+</body>
+
+</html>

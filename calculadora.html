@@ -1,0 +1,69 @@
+<meta charset="UTF-8">
+
+<h3>Álcool ou Gasolina?</h3>
+
+<script>
+
+    var tanque = 30;    //coloque aqui a quantidade de litros de combustível utilizada.
+
+    var autonomiaComAlcool = 300;
+    var autonomiaComAlcool = autonomiaComAlcool/tanque;
+
+    var autonomiaComGasolina = 480;    //distancia total percorrida com o consumo de um tanque
+    var autonomiaComGasolina = autonomiaComGasolina/tanque;    //razao entre o autonomia com um tanque e o volume de um tanque em km/l
+
+    var precoAlcool = 2.6;
+    var precoGasolina = 4.0;    //preco por litro de combustivel em R$
+
+
+    var relacaoAlcoolGasolina = (autonomiaComAlcool / autonomiaComGasolina).toFixed(2);    //razao entre o consumo total de álcool e o de gasolina em um mesmo percurso
+
+    var relacaoPrecoAlcoolGasolina = (precoAlcool / precoGasolina).toFixed(2);    //razao entre preco do alcool e da gasolina
+
+    document.write("Para este carro, a autonomia com álcool é " + autonomiaComAlcool + " km/L");
+
+    document.write("<br>");
+
+    document.write("Para este carro, a autonomia com gasolina é " + autonomiaComGasolina + " km/L");
+
+    document.write("<br>");
+
+    document.write("<br>");
+
+    document.write("Para este carro, a relação entre autonomia com uso de álcool e com uso de gasolina é de " + relacaoAlcoolGasolina);
+
+    document.write("<br>");
+
+    document.write("<br>");
+
+    document.write("Se dividir o preço do álcool pelo preço da gasolina, e este valor for MENOR que " + relacaoAlcoolGasolina + ", é sinal que, para este carro, vale mais a pena usar ÁLCOOL");
+
+    document.write("<br>");
+
+    document.write("<br>");
+
+    document.write("Se dividir o preço do álcool pelo preço da gasolina, e este valor for MAIOR que " + relacaoAlcoolGasolina + ", é sinal que, para este carro, vale mais a pena usar GASOLINA");
+
+    document.write("<br>");
+
+    document.write("<br>");
+
+    document.write("<br>");
+
+    document.write("Preço da gasolina neste posto: R$ " + (precoGasolina).toFixed(2));
+
+    document.write("<br>");
+
+    document.write("Preço do álcool neste posto: R$ " + (precoAlcool).toFixed(2));    
+
+    document.write("<br>");
+
+    document.write("<br>");
+
+    document.write("A relação entre o preço do álcool / preço da gasolina neste posto é de " + relacaoPrecoAlcoolGasolina);
+
+    document.write("<br>");
+
+    document.writ3e("Logo, sendo MAIOR que " + relacaoAlcoolGasolina + ", para este carro e este posto, vale a pena comprar GASOLINA");
+
+</script>
